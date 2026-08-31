@@ -4,6 +4,7 @@ import { Bell, Gamepad2, Handbag, SmilePlus, Trophy, Wifi } from "lucide-react";
 const currentTime = new Date().toLocaleTimeString([], {
   hour: "2-digit",
   minute: "2-digit",
+  hour12: false,
 });
 
 const Header = () => {
