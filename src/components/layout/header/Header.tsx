@@ -8,16 +8,17 @@ const currentTime = new Date().toLocaleTimeString([], {
 
 const Header = () => {
   return (
-    <header>
-      <div>
-        <div>
-          <time>{currentTime}</time>
-          <Wifi />
+    <header className="px-8 py-4 grid grid-cols-[2fr_5fr_2fr] items-center">
+      <div className="flex items-center gap-[72px]">
+        <div className="flex items-center gap-3">
+          <time className="font-semibold">{currentTime}</time>
+          <Wifi className="size-4" />
         </div>
 
-        <div>
-          <span>
-            <Handbag fill="white" />3
+        <div className="text-xs flex items-center gap-1">
+          <span className="flex items-center gap-1">
+            <Handbag className="size-5" />
+            <span>3</span>
           </span>
 
           <span>|</span>
@@ -26,36 +27,41 @@ const Header = () => {
         </div>
       </div>
 
-      <div>
-        <div>
+      <div className="text-xs font-semibold flex items-center gap-2 justify-center">
+        <div className="flex flex-col items-center">
           <Gamepad2 />
-          <span>1</span>
+          <div className="mt-1.5">1</div>
         </div>
-        <div>
+        <div className="flex flex-col items-center">
           <Gamepad2 />
-          <span>2</span>
+          <div className="mt-1.5">2</div>
         </div>
       </div>
 
-      <div>
-        <div>
-          <Bell fill="white" />
+      <div className="flex items-center justify-end gap-6 text-sm font-semibold">
+        <div className="flex items-center gap-1.5">
+          <Bell />
           <span>12</span>
         </div>
 
-        <div>
+        <div className="flex items-center gap-2.5">
           <SmilePlus />
           <span>9</span>
         </div>
 
-        <div>
+        <div className="flex items-center gap-3">
           <img src="/images/ps-plus.svg" alt="PS Plus" width={24} height={24} />
-          <div>
-            <img src="" alt="" />
+          <div className="flex items-center gap-2 shrink-0">
+            <img
+              src="/images/avatar.jpeg"
+              alt="FallingStickman"
+              width={45}
+              height={45}
+            />
             <div>
-              <div>FallingStickman</div>
-              <div>
-                <Trophy fill="white " />
+              <div className="mb-1">FallingStickman</div>
+              <div className="flex items-center gap-1 text-xs">
+                <Trophy size={16} />
                 <span>14</span>
               </div>
             </div>
