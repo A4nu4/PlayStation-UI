@@ -15,7 +15,6 @@ const TopMenu = ({ activeCategory, setActiveCategory }: Props) => {
           <li key={category.slug}>
             <button
               onClick={() => {
-                console.log(category.slug);
                 setActiveCategory(category.slug);
               }}
               className={cn(
