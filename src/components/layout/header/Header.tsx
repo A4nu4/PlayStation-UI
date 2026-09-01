@@ -9,8 +9,8 @@ const currentTime = new Date().toLocaleTimeString([], {
 
 const Header = () => {
   return (
-    <header className="px-8 py-4 grid grid-cols-[2fr_5fr_2fr] items-center">
-      <div className="flex items-center gap-[72px]">
+    <header className="px-8 py-4 grid grid-cols-[minmax(300px,2fr)_5fr_minmax(400px,2fr)] items-center">
+      <div className="flex items-center gap-8">
         <div className="flex items-center gap-3">
           <time className="font-semibold">{currentTime}</time>
           <Wifi className="size-4" />
@@ -52,7 +52,7 @@ const Header = () => {
 
         <div className="flex items-center gap-3">
           <img src="/images/ps-plus.svg" alt="PS Plus" width={24} height={24} />
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex items-center gap-2">
             <img
               src="/images/avatar.jpeg"
               alt="FallingStickman"
@@ -60,7 +60,7 @@ const Header = () => {
               height={45}
             />
             <div>
-              <div className="mb-1">FallingStickman</div>
+              <div className="mb-1 whitespace-nowrap">FallingStickman</div>
               <div className="flex items-center gap-1 text-xs">
                 <Trophy size={16} />
                 <span>14</span>
