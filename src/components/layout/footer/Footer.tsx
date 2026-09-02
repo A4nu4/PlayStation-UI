@@ -3,7 +3,7 @@ import { KeyInfo } from "../../ui/Keyinfo";
 
 const Footer = () => {
   return (
-    <div className="flex items-center gap-5 absolute bottom-5 right-4 text-sm">
+    <div className="flex flex-row-reverse items-center gap-5 text-sm p-2">
       {hotKeysData.map((hotkey) => (
         <KeyInfo key={hotkey.label} keyDetail={hotkey} />
       ))}

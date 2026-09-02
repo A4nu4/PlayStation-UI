@@ -15,7 +15,7 @@ const Layout = ({ children }: PropsWithChildren<unknown>) => {
 
       <div className="relative flex h-full flex-col">
         <Header />
-        <main className="flex-1 mb-24">{children}</main>
+        <main className=" flex-1">{children}</main>
         <Footer />
       </div>
     </div>
