@@ -15,8 +15,10 @@
     "lucide-react": "^1.38.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+    "react-hotkeys-hook": "^5.3.3",
     "swiper": "^14.2.0",
     "tailwindcss": "^4.3.3",
+    "ts-key-enum": "^3.0.13",
     "zustand": "^5.0.15"
   },
   "devDependencies": {

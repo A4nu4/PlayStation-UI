@@ -1,6 +1,14 @@
-export class HotKeys {
-  static readonly TOP_MENU = "1";
-  static readonly DETAILS = "↓";
-  static readonly NAV_RIGHT = "➔";
-  static readonly NAV_LEFT = "←";
-}
+export const KeyEnum = {
+  ArrowUp: "ArrowUp",
+  ArrowDown: "ArrowDown",
+  ArrowLeft: "ArrowLeft",
+  ArrowRight: "ArrowRight",
+  Enter: "Enter",
+  Escape: "Escape",
+  Space: " ",
+  Tab: "Tab",
+  Shift: "Shift",
+  Control: "Control",
+  Alt: "Alt",
+  Meta: "Meta",
+} as const;

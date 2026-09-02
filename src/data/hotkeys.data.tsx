@@ -7,9 +7,8 @@ import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp } from "lucide-react";
 
 export const hotKeysData = [
   {
-    icon: <div className="text-base font-medium">1</div>,
+    icon: <ArrowUp />,
     label: "TOP MENU",
-    hotkey: "1",
   },
   {
     icon: (
@@ -19,7 +18,6 @@ export const hotKeysData = [
       </>
     ),
     label: "DETAILS",
-    hotkey: "ArrowDown",
   },
   {
     icon: (
@@ -28,7 +26,6 @@ export const hotKeysData = [
       </>
     ),
     label: "PREV GAME",
-    hotkey: "ArrowLeft",
   },
   {
     icon: (
@@ -37,7 +34,6 @@ export const hotKeysData = [
       </>
     ),
     label: "NEXT GAME",
-    hotkey: "ArrowRight",
   },
 ];
 
