@@ -6,7 +6,7 @@ import { useHotkeys } from "react-hotkeys-hook";
 import { KeyEnum } from "./config/hotkeys.config";
 import { CATEGORIES } from "./data/menu.data";
 import GameDetails from "./components/game-details/GameDetails";
-import cn from "clsx";
+import { AnimatePresence, motion } from "motion/react";
 
 type TLevelFocus = "top-menu" | "game-carousel" | "details";
 
@@ -55,24 +55,65 @@ function App() {
   return (
     <div className="flex h-full flex-col ">
       <div className="flex flex-col justify-between flex-1">
-        <div
-          className={cn(
-            "ml-28 mt-5",
-            levelFocus === "details" ? "hidden" : "block",
-          )}
-        >
+        <div className="ml-28 mt-5">
           <Menu
             activeValue={activeCategory}
             onSelect={(value) => setActiveCategory(value)}
             items={CATEGORIES}
           />
         </div>
-        <div className={cn(levelFocus === "details" ? "hidden" : "block")}>
-          <GameCarousel swiperRef={swiperRef} />
-        </div>
-      </div>
 
-      <GameDetails levelFocus={levelFocus} />
+        <AnimatePresence mode="wait">
+          {levelFocus === "details" ? (
+            <motion.div
+              key="details"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 0.5,
+                  ease: "easeOut",
+                },
+              }}
+              exit={{
+                opacity: 0,
+                y: -40,
+                transition: {
+                  duration: 0.25,
+                  ease: "easeIn",
+                },
+              }}
+            >
+              {" "}
+              <GameDetails levelFocus={levelFocus} />{" "}
+            </motion.div>
+          ) : (
+            <motion.div
+              key="carousel"
+              initial={{ opacity: 0, y: -40 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 0.5,
+                  ease: "easeOut",
+                },
+              }}
+              exit={{
+                opacity: 0,
+                y: 40,
+                transition: {
+                  duration: 0.25,
+                  ease: "easeIn",
+                },
+              }}
+            >
+              <GameCarousel swiperRef={swiperRef} />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 }
