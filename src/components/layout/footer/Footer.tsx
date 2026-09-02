@@ -1,4 +1,3 @@
-import React from "react";
 import { hotKeysData } from "../../../data/hotkeys.data";
 import { KeyInfo } from "../../ui/Keyinfo";
 

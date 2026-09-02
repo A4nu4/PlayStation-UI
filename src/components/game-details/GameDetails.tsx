@@ -1,4 +1,3 @@
-import React from "react";
 import GameHeader from "./GameHeader";
 import GameLauncher from "./GameLauncher";
 import { useGameStore } from "../../store";
@@ -11,7 +10,7 @@ const GameDetails = ({ levelFocus }: { levelFocus: string }) => {
   return (
     <div
       className={cn(
-        "items-center justify-between mx-28",
+        "items-center justify-between mx-12",
         levelFocus === "details" ? "flex" : "hidden",
       )}
     >

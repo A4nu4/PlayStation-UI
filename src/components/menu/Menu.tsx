@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { CATEGORIES } from "../../data/menu.data";
 import cn from "clsx";
 import type { IMenuItem } from "../../types";
 

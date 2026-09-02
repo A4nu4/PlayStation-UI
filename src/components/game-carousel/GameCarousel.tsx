@@ -1,4 +1,4 @@
-import React, { RefObject } from "react";
+import { RefObject } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { SwiperRef } from "swiper/react";
 

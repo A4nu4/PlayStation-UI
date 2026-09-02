@@ -1,4 +1,3 @@
-import React from "react";
 import { Bell, Gamepad2, Handbag, SmilePlus, Trophy, Wifi } from "lucide-react";
 
 const currentTime = new Date().toLocaleTimeString([], {

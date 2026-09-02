@@ -1,7 +1,6 @@
 import React from "react";
 import { Menu } from "./components/menu/Menu";
 import GameCarousel from "./components/game-carousel/GameCarousel";
-import type { TCategorySlug } from "./types";
 import type { SwiperRef } from "swiper/react";
 import { useHotkeys } from "react-hotkeys-hook";
 import { KeyEnum } from "./config/hotkeys.config";
@@ -54,24 +53,23 @@ function App() {
   });
 
   return (
-    <div
-      className="flex flex-col justify-between flex-1"
-      style={{ height: "75%" }}
-    >
-      <div
-        className={cn(
-          "ml-28 mt-5",
-          levelFocus === "details" ? "hidden" : "block",
-        )}
-      >
-        <Menu
-          activeValue={activeCategory}
-          onSelect={(value) => setActiveCategory(value)}
-          items={CATEGORIES}
-        />
-      </div>
-      <div className={cn(levelFocus === "details" ? "hidden" : "block")}>
-        <GameCarousel swiperRef={swiperRef} />
+    <div className="flex h-full flex-col ">
+      <div className="flex flex-col justify-between flex-1">
+        <div
+          className={cn(
+            "ml-28 mt-5",
+            levelFocus === "details" ? "hidden" : "block",
+          )}
+        >
+          <Menu
+            activeValue={activeCategory}
+            onSelect={(value) => setActiveCategory(value)}
+            items={CATEGORIES}
+          />
+        </div>
+        <div className={cn(levelFocus === "details" ? "hidden" : "block")}>
+          <GameCarousel swiperRef={swiperRef} />
+        </div>
       </div>
 
       <GameDetails levelFocus={levelFocus} />
