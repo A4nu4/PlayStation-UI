@@ -1,17 +1,18 @@
 import React from "react";
-import TopMenu from "./components/top-menu/TopMenu";
+import { Menu } from "./components/menu/Menu";
 import GameCarousel from "./components/game-carousel/GameCarousel";
 import type { TCategorySlug } from "./types";
 import type { SwiperRef } from "swiper/react";
 import { useHotkeys } from "react-hotkeys-hook";
 import { KeyEnum } from "./config/hotkeys.config";
-import { CATEGORIES } from "./data/categories.data";
+import { CATEGORIES } from "./data/menu.data";
+import GameDetails from "./components/game-details/GameDetails";
+import cn from "clsx";
 
 type TLevelFocus = "top-menu" | "game-carousel" | "details";
 
 function App() {
-  const [activeCategory, setActiveCategory] =
-    React.useState<TCategorySlug>("all");
+  const [activeCategory, setActiveCategory] = React.useState<string>("all");
 
   const [levelFocus, setLevelFocus] =
     React.useState<TLevelFocus>("game-carousel");
@@ -57,11 +58,23 @@ function App() {
       className="flex flex-col justify-between flex-1"
       style={{ height: "75%" }}
     >
-      <TopMenu
-        activeCategory={activeCategory}
-        setActiveCategory={setActiveCategory}
-      />
-      <GameCarousel swiperRef={swiperRef} />
+      <div
+        className={cn(
+          "ml-28 mt-5",
+          levelFocus === "details" ? "hidden" : "block",
+        )}
+      >
+        <Menu
+          activeValue={activeCategory}
+          onSelect={(value) => setActiveCategory(value)}
+          items={CATEGORIES}
+        />
+      </div>
+      <div className={cn(levelFocus === "details" ? "hidden" : "block")}>
+        <GameCarousel swiperRef={swiperRef} />
+      </div>
+
+      <GameDetails levelFocus={levelFocus} />
     </div>
   );
 }
